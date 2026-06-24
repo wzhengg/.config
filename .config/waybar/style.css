@@ -1,0 +1,32 @@
+* {
+	all: unset;
+}
+
+window#waybar {
+	background-color: #181616;
+}
+
+#tags button {
+	color: #727169;
+	font-size: 16px;
+	padding: 8px;
+}
+
+#tags button.occupied {
+	color: #dcd7ba;
+}
+
+#tags button.focused {
+	background-color: #223249;
+}
+
+#backlight,
+#battery,
+#clock,
+#cpu,
+#disk,
+#memory,
+#wireplumber {
+	color: #dcd7ba;
+	padding: 8px;
+}

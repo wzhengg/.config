@@ -1,0 +1,55 @@
+{
+	"layer": "top",
+	"position": "top",
+
+	"modules-left": [
+		"river/tags"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"cpu",
+		"memory",
+		"disk",
+		"backlight",
+		"wireplumber",
+		"battery"
+	],
+
+	"backlight": {
+		"format": "bl {percent}%",
+		"scroll-step": 0,
+		"tooltip": false
+	},
+	"battery": {
+		"format": "bat {capacity}%",
+		"tooltip": false
+	},
+	"clock": {
+		"format": "{:%b %d %H:%M}",
+		"tooltip": false
+	},
+	"cpu": {
+		"format": "cpu {usage}%",
+		"tooltip": false
+	},
+	"disk": {
+		"format": "disk {used}",
+		"tooltip": false
+	},
+	"memory": {
+		"format": "mem {used}GiB",
+		"tooltip": false
+	},
+	"river/tags": {
+		"num-tags": 9,
+		"disable-click": true
+	},
+	"wireplumber": {
+		"format": "vol {volume}%",
+		"format-muted": "vol mut",
+		"scroll-step": 0,
+		"tooltip": false
+	}
+}

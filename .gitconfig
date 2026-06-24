@@ -1,0 +1,7 @@
+[user]
+	name = William Zheng
+	email = williamzheng2001@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
