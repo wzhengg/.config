@@ -3,14 +3,10 @@
 # See the river(1), riverctl(1), and rivertile(1) man pages for complete
 # documentation.
 
-systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
-# systemctl --user restart xdg-desktop-portal xdg-desktop-portal-wlr
-
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super+Shift Return spawn foot
 
-riverctl map normal Super+Shift B spawn firefox
+riverctl map normal Super+Shift B spawn firefox-bin
 
 # Super+Shift+C to close the focused view
 riverctl map normal Super+Shift C close
@@ -79,27 +75,31 @@ riverctl map normal None XF86AudioRaiseVolume spawn 'wpctl set-volume @DEFAULT_S
 riverctl map normal None XF86AudioLowerVolume spawn 'wpctl set-volume @DEFAULT_SINK@ 5%-'
 riverctl map normal None XF86AudioMute spawn 'wpctl set-mute @DEFAULT_SINK@ toggle'
 
-# Control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
-riverctl map normal None XF86MonBrightnessUp spawn 'brightnessctl set +5%'
-riverctl map normal None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+# Control screen backlight brightness
+riverctl map normal None XF86MonBrightnessDown spawn 'xbacklight -dec 5'
+riverctl map normal None XF86MonBrightnessUp spawn 'xbacklight -inc 5'
 
 # Set background and border color
 riverctl background-color 0x1f1f28
 riverctl border-color-focused 0x2d4f67
 riverctl border-color-unfocused 0x252535
 
+riverctl xcursor-theme Adwaita 16
+
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
 
 riverctl keyboard-layout -variant colemak us
 
-riverctl input pointer-2-7-SynPS/2_Synaptics_TouchPad tap enabled
-riverctl input pointer-2-7-SynPS/2_Synaptics_TouchPad natural-scroll enabled
+riverctl input pointer-2362-628-PIXA3854:00_093A:0274_Touchpad tap enabled
+riverctl input pointer-2362-628-PIXA3854:00_093A:0274_Touchpad natural-scroll enabled
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 0 -outer-padding 0 -main-location left -main-count 1 -main-ratio 0.5 &
 
-riverctl spawn waybar
-riverctl spawn 'wlsunset -l 40 -L -79'
+riverctl spawn gentoo-pipewire-launcher
+riverctl spawn kanshi
+# riverctl spawn waybar
+# riverctl spawn 'wlsunset -l 40 -L -79'
