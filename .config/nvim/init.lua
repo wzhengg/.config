@@ -13,6 +13,9 @@ set path+=**       " search subdirectories with :find
 
 colorscheme habamax
 
+" remove neovim-specific mappings to match vanilla vim.
+mapclear
+
 " for such a small config, i prefer seeing everything in one place over ftplugin.
 " vim is a lot more concise than lua for simple autocmds.
 augroup ftsettings
