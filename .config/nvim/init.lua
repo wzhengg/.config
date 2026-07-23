@@ -6,7 +6,7 @@ set tabstop=4      " tabs are 4 columns wide
 set shiftwidth=0   " use tabstop for indent width
 set shiftround     " round indent to multiple of shiftwidth
 set smartindent    " smart auto-indent
-set wrap           " disable line wrap
+set nowrap         " disable line wrap
 set ignorecase     " case-insensitive search
 set smartcase      " case-sensitive search if pattern contains uppercase
 set path+=**       " search subdirectories with :find
