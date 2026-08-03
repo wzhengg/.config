@@ -6,7 +6,7 @@
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super+Shift Return spawn foot
 
-riverctl map normal Super+Shift B spawn firefox-bin
+riverctl map normal Super P spawn 'bemenu-run --ignorecase --no-cursor --prompt ""'
 
 # Super+Shift+C to close the focused view
 riverctl map normal Super+Shift C close
